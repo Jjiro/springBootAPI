@@ -30,7 +30,7 @@ public class SpecializedFieldController {
                                            Model model) {
         List<SpecializedField> specializedFields = specializedFieldService.getAllSpecializedFields();
         model.addAttribute("specializedFields", specializedFields);
-        return "specializedField/specializedField-list";
+        return "specializedField/specialized-field-list";
     }
 
     @GetMapping("/add")
@@ -40,7 +40,7 @@ public class SpecializedFieldController {
                 .filter(Category::isActive).collect(Collectors.toList());
         model.addAttribute("categories", categories);
 
-        return "specializedField/specializedField-add";
+        return "specializedField/specialized-field-add";
     }
 
     @PostMapping("/add")
@@ -71,7 +71,7 @@ public class SpecializedFieldController {
                 .filter(Category::isActive).collect(Collectors.toList());
         model.addAttribute("categories", categories);
 
-        return "specializedField/specializedField-update";
+        return "specializedField/specialized-field-update";
     }
 
     @PostMapping("/update/{id}")
