@@ -2,6 +2,7 @@ package com.sda.studysystem.controllers;
 
 
 import com.sda.studysystem.models.Student;
+import com.sda.studysystem.services.SchoolService;
 import com.sda.studysystem.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,9 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+
+    @Autowired
+    private SchoolService schoolService;
 
     @GetMapping("")
     public List<Student> showAllStudents() {

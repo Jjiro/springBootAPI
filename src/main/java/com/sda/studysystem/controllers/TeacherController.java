@@ -1,6 +1,7 @@
 package com.sda.studysystem.controllers;
 
 import com.sda.studysystem.models.Teacher;
+import com.sda.studysystem.services.SpecializedFieldService;
 import com.sda.studysystem.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,9 @@ public class TeacherController {
     
     @Autowired
     private TeacherService teacherService;
+
+    @Autowired
+    private SpecializedFieldService specializedFieldService;
 
     @GetMapping("")
     public List<Teacher> showAllTeachers() {
