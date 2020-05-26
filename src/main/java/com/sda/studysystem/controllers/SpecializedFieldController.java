@@ -39,7 +39,6 @@ public class SpecializedFieldController {
         List<Category> categories = categoryService.getAllCategories().stream()
                 .filter(Category::isActive).collect(Collectors.toList());
         model.addAttribute("categories", categories);
-
         return "specializedField/specialized-field-add";
     }
 
@@ -50,12 +49,12 @@ public class SpecializedFieldController {
         if (createResult) {
             redirectAttributes.addFlashAttribute("message", "SpecializedField has been successfully created.");
             redirectAttributes.addFlashAttribute("messageType", "success");
-            return "redirect:/specializedField/";
+            return "redirect:/specialized-field/";
         } else {
             redirectAttributes.addFlashAttribute("specializedField", specializedField);
             redirectAttributes.addFlashAttribute("message", "Error in creating a specializedField!");
             redirectAttributes.addFlashAttribute("messageType", "error");
-            return "redirect:/specializedField/add";
+            return "redirect:/specialized-field/add";
         }
     }
 
@@ -82,13 +81,13 @@ public class SpecializedFieldController {
         if (updateResult) {
             redirectAttributes.addFlashAttribute("message", "SpecializedField #" + specializedFieldId + " has been successfully updated.");
             redirectAttributes.addFlashAttribute("messageType", "success");
-            return "redirect:/specializedField/";
+            return "redirect:/specialized-field/";
         } else {
             redirectAttributes.addAttribute("id", specializedFieldId);
             redirectAttributes.addAttribute("specializedField", specializedField);
             redirectAttributes.addFlashAttribute("message", "Error in updating a specializedField #" + specializedFieldId + "!");
             redirectAttributes.addFlashAttribute("messageType", "error");
-            return "redirect:/specializedField/update/{id}";
+            return "redirect:/specialized-field/update/{id}";
         }
     }
 
@@ -104,7 +103,7 @@ public class SpecializedFieldController {
             redirectAttributes.addFlashAttribute("messageType", "error");
         }
 
-        return "redirect:/specializedField/";
+        return "redirect:/specialized-field/";
     }
 
     @GetMapping("/restore/{id}")
@@ -119,7 +118,7 @@ public class SpecializedFieldController {
             redirectAttributes.addFlashAttribute("messageType", "error");
         }
 
-        return "redirect:/specializedField/";
+        return "redirect:/specialized-field/";
     }
 
 }

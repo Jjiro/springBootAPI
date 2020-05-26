@@ -49,14 +49,14 @@
                     <span th:text="${message}"></span>
                 </div>
                     <form action="#" th:action="@{/city/add}" th:object="${city}" method="post">
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label for="country">Select Country</label>
                             <select th:field="*{country.id}" class="custom-select" id="country" required>
                                 <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.name}"></option>
                             </select>
-                        </div>
+                        </div>-->
                         <div class="form-group">
-                            <label for="country">Select County</label>
+                            <label for="county">Select County</label>
                             <select th:field="*{county.id}" class="custom-select" id="county" required>
                                 <option th:each="county : ${counties}" th:value="${county.id}" th:text="${county.name}"></option>
                             </select>

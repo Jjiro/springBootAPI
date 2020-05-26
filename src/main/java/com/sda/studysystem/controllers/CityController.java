@@ -22,11 +22,13 @@ public class CityController {
 
     @Autowired
     private CityService cityService;
-    @Autowired
-    private CountryService countryService;
 
     @Autowired
     private CountyService countyService;
+
+    @Autowired
+    private CountryService countryService;
+
 
     @GetMapping("")
     public String showAllCities(@ModelAttribute("messageType") String messageType, @ModelAttribute("message") String message,
@@ -46,7 +48,6 @@ public class CityController {
         List<County> counties = countyService.getAllCounties().stream()
                 .filter(County::isActive).collect(Collectors.toList());
         model.addAttribute("counties", counties);
-
         return "city/city-add";
     }
 
